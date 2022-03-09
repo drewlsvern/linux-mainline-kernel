@@ -1,7 +1,8 @@
 image: ayufan/rock64-dockerfiles:x86_64
 
 variables:
-  GITHUB_USER: ayufan-rock64
+  GIT_STRATEGY: none
+  GITHUB_USER: drewlsvern
   GITHUB_REPO: linux-mainline-kernel
 
   USE_CCACHE: "true"
@@ -17,14 +18,17 @@ build:
   only: [branches]
   script:
     - export RELEASE=$((1000+$CI_PIPELINE_IID))
-    - ./dev-make kernel-package
-    - |
-      set -x
-
-      export RELEASE_NAME="$(./dev-make version)"
-      export RELEASE_TITLE="$(./dev-make version)"
-      export DESCRIPTION="$CI_PROJECT_URL/pipelines/$CI_PIPELINE_ID"
+    - touch ../bob.txt
+    - cp ../bob.txt bob.txt
+    #- ./dev-make kernel-package
+    #- |
+    #  set -x
+    #
+    #  export RELEASE_NAME="$(./dev-make version)"
+    #  export RELEASE_TITLE="$(./dev-make version)"
+    #  export DESCRIPTION="$CI_PROJECT_URL/pipelines/$CI_PIPELINE_ID"
 
   artifacts:
     paths:
-      - ../*.deb
+      - ./*.txt
+      #- ../*.deb
