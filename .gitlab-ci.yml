@@ -1,7 +1,6 @@
 image: ayufan/rock64-dockerfiles:x86_64
 
 variables:
-  GIT_STRATEGY: none
   GITHUB_USER: drewlsvern
   GITHUB_REPO: linux-mainline-kernel
 
