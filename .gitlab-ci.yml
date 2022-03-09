@@ -21,7 +21,7 @@ build:
     - echo "bob" > bob.txt
   artifacts:
     paths:
-      - *.txt
+      - ./*.txt
     # - ./dev-make kernel-package
     # - |
     #   set -x
